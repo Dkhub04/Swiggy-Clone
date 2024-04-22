@@ -1,4 +1,42 @@
-#heading{
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
 
-    color:  red;
+.logo {
+  width: 200px;
+}
+
+.tags > ul {
+  font-size: 24px;
+  display: flex;
+  list-style-type: none;
+}
+
+.tags > ul > li {
+  padding: 10px;
+  margin: 20px;
+}
+
+.search {
+  padding: 10px;
+}
+.rescards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+.res-card {
+  padding: 5px;
+  width: 200px;
+}
+
+.res-card:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.res-logo {
+  width: 100%;
 }
