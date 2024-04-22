@@ -1,24 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-section">
-                <img className="logo" src="https://i.pinimg.com/originals/d2/82/c8/d282c8b0f4af7e8354081882ea4ae191.png"></img>
-            </div>
-            <div className="tags">
-                <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    );
-}
-
 const Reslist = [
     {
       "info": {
@@ -1634,43 +1613,4 @@ const Reslist = [
     }
   ]
 
-const RestCards = ({resdata}) => {
-    return (
-        <div className="res-card">
-            <img className="res-logo" alt="res-logo" src={ "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + resdata.info.cloudinaryImageId}/>
-            <h3>{resdata.info.name}</h3>
-            <h4>{resdata.info.cuisines.join(", ")}</h4>
-            <h4>{resdata.info.avgRating} stars</h4>
-            <h4>{resdata.info.sla.deliveryTime} Minutes</h4>
-        </div>
-    );
-}
-
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">
-                    Search
-                </div>
-                <div className="rescards">
-                    {
-                        Reslist.map((restraunt) => (
-                            <RestCards key={restraunt.info.id} resdata={restraunt} />
-                        ))
-                    }
-                   </div>
-        </div>
-    );
-}
-const Applayout = () => {
-    return (
-        <div className="app">
-            <Header />
-            <Body/>
-        </div>
-    );
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<Applayout />)
+  export default Reslist;
