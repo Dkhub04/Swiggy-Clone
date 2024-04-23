@@ -28,8 +28,10 @@
   margin: 10px;
 }
 .res-card {
+  margin: 20px;
   padding: 5px;
   width: 200px;
+  background-color: #f0f0f0;
 }
 
 .res-card:hover {
@@ -41,7 +43,36 @@
   width: 100%;
 }
 
-.filter-btn{
+.filter-btn {
   margin: 10px;
+  cursor: pointer;
+}
+
+.Shimmer-Container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Shimmer-Card {
+  margin: 20px;
+  width: 200px;
+  height: 400px;
+  background-color: #f0f0f0;
+}
+
+.btn {
+  margin: 5px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.filter{
+  display: flex;
+  flex-wrap: wrap;
+}
+.Search-box{
+  margin: 10px;
+}
+.Search-Btn{
   cursor: pointer;
 }
