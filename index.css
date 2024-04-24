@@ -4,8 +4,8 @@
   border: 1px solid black;
 }
 
-  a{
-  color: black; 
+a {
+  color: black;
   text-decoration-line: none;
 }
 
@@ -34,7 +34,6 @@
   margin: 10px;
 }
 .res-card {
-  
   margin: 20px;
   padding: 5px;
   width: 200px;

@@ -46,9 +46,9 @@ const Body = () => {
             <div className="rescards">
                 {
                     filteredlist.map((restraunt) => (
-                        <Link style={{ 
-                            color : "black"
-                            } } key={restraunt.info.id} to={"/restraunt/" + restraunt.info.id}> <RestCards resdata={restraunt} /> </Link>
+                        <Link style={{
+                            color: "black"
+                        }} key={restraunt.info.id} to={"/restraunt/" + restraunt.info.id}> <RestCards resdata={restraunt} /> </Link>
 
                     ))
 
