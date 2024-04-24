@@ -3,6 +3,8 @@ import Reslist from "../utils/Reslist";
 import RestCards from "./RestCards";
 import { useState } from "react";
 import Shimmer from "./Shimmer";
+import { Body_API } from "../utils/Constants";
+import { Link } from "react-router-dom";
 
 const Body = () => {
 
@@ -16,7 +18,7 @@ const Body = () => {
 
     const fetchData = async () => {
 
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.7106604&lng=81.0952431&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+        const data = await fetch(Body_API)
         const json = await data.json();
         console.log(json);
         setrestaurantlist(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -44,8 +46,10 @@ const Body = () => {
             <div className="rescards">
                 {
                     filteredlist.map((restraunt) => (
-                        <RestCards key={restraunt.info.id} resdata={restraunt} />
+                        <Link key={restraunt.info.id} to={"/restraunt/"+restraunt.info.id}> <RestCards resdata={restraunt}/> </Link>
+                       
                     ))
+
                 }
             </div>
         </div>
