@@ -16,11 +16,11 @@ const Body = () => {
 
     const fetchData = async () => {
 
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.7106604&lng=81.0952431&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.7106604&lng=81.0952431&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const json = await data.json();
         console.log(json);
-        setrestaurantlist(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        Setfilteredlist(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setrestaurantlist(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        Setfilteredlist(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     return restaurantlist == 0 ? <Shimmer /> : (
@@ -36,7 +36,6 @@ const Body = () => {
                 <button className="filter-btn" onClick={
                     () => {
                         const filtered = restaurantlist.filter((res) => res.info.avgRating > 4);
-                        
                         Setfilteredlist(filtered);
                     }
                 }>Top Rated Restaurant
