@@ -4,6 +4,11 @@
   border: 1px solid black;
 }
 
+  a{
+  color: black; 
+  text-decoration-line: none;
+}
+
 .logo {
   width: 200px;
 }
@@ -23,11 +28,13 @@
   padding: 10px;
 }
 .rescards {
+  color: #f0f0f0;
   display: flex;
   flex-wrap: wrap;
   margin: 10px;
 }
 .res-card {
+  
   margin: 20px;
   padding: 5px;
   width: 200px;
@@ -66,13 +73,13 @@
   cursor: pointer;
 }
 
-.filter{
+.filter {
   display: flex;
   flex-wrap: wrap;
 }
-.Search-box{
+.Search-box {
   margin: 10px;
 }
-.Search-Btn{
+.Search-Btn {
   cursor: pointer;
 }

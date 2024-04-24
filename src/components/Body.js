@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 const Body = () => {
 
     const [restaurantlist, setrestaurantlist] = useState([]);
-    const [SearchText,SetSearchText] = useState("");
-    const [filteredlist , Setfilteredlist] = useState([]);
+    const [SearchText, SetSearchText] = useState("");
+    const [filteredlist, Setfilteredlist] = useState([]);
 
     useEffect(() => {
         fetchData();
@@ -29,11 +29,11 @@ const Body = () => {
         <div className="body">
             <div className="filter">
                 <div className="Search">
-                    <input type="text" className="Search-box" value={SearchText} onChange={(e)=>{SetSearchText(e.target.value)}}></input>
-                    <button className="Search-Btn" onClick={()=>{
-                        const filteredrest = restaurantlist.filter((res)=> res.info.name.toLowerCase().includes(SearchText.toLowerCase()))
+                    <input type="text" className="Search-box" value={SearchText} onChange={(e) => { SetSearchText(e.target.value) }}></input>
+                    <button className="Search-Btn" onClick={() => {
+                        const filteredrest = restaurantlist.filter((res) => res.info.name.toLowerCase().includes(SearchText.toLowerCase()))
                         Setfilteredlist(filteredrest);
-                     }}>Search</button>
+                    }}>Search</button>
                 </div>
                 <button className="filter-btn" onClick={
                     () => {
@@ -46,8 +46,10 @@ const Body = () => {
             <div className="rescards">
                 {
                     filteredlist.map((restraunt) => (
-                        <Link key={restraunt.info.id} to={"/restraunt/"+restraunt.info.id}> <RestCards resdata={restraunt}/> </Link>
-                       
+                        <Link style={{ 
+                            color : "black"
+                            } } key={restraunt.info.id} to={"/restraunt/" + restraunt.info.id}> <RestCards resdata={restraunt} /> </Link>
+
                     ))
 
                 }
