@@ -5,6 +5,7 @@ import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { Body_API } from "../utils/Constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
 
@@ -24,6 +25,14 @@ const Body = () => {
         setrestaurantlist(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         Setfilteredlist(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
+
+    const onlineStatus = useOnlineStatus();
+
+    if (onlineStatus === false)
+
+        return (
+            <div> <h1>Error !!! Please Check Your Internet Conenction !!! </h1></div>
+        )
 
     return restaurantlist == 0 ? <Shimmer /> : (
         <div className="body">

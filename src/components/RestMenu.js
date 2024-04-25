@@ -1,28 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
-import { Menu_API } from "../utils/Constants";
+import useRestMenu from "../utils/useRestMenu";
 
 
 const RestMenu = () => {
 
-    const [RestInfo, SetRestInfo] = useState(null);
     const { Resid } = useParams();
 
-    console.log(Resid);
-
-    useEffect(() => {
-        fetchMenu();
-    }, [])
-
-    const fetchMenu = async () => {
-        const data = await fetch(Menu_API + Resid);
-
-        const json = await data.json();
-        console.log(json);
-        SetRestInfo(json.data);
-
-    };
+    const RestInfo = useRestMenu(Resid);
 
     if (RestInfo === null) {
         return (<Shimmer />)
@@ -35,7 +21,7 @@ const RestMenu = () => {
     const { itemCards, carousel } = RestInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
 
     console.log(RestInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card);
-    // console.log(itemCards);
+
 
     if (itemCards === null && carousel == null) {
         return (
