@@ -7,6 +7,7 @@ import { Body_API } from "../utils/Constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
+
 const Body = () => {
 
     const [restaurantlist, setrestaurantlist] = useState([]);
@@ -22,8 +23,8 @@ const Body = () => {
         const data = await fetch(Body_API)
         const json = await data.json();
         console.log(json);
-        setrestaurantlist(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        Setfilteredlist(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setrestaurantlist(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        Setfilteredlist(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     const onlineStatus = useOnlineStatus();

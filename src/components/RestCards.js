@@ -12,4 +12,16 @@ const RestCards = ({ resdata }) => {
     );
 }
 
+export const PromotedRestCards = (RestCards) => {
+
+    return (props) => {
+        return (
+            <div>
+                <label>Promoted</label>
+                <RestCards {...props} />
+            </div>
+        )
+    }
+}
+
 export default RestCards;
